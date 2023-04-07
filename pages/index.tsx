@@ -8,8 +8,8 @@ const index = () => {
         <Image
           src="/cat.jpg"
           alt="Cat"
-          width="60"
-          height="80"
+          width="40"
+          height="60"
           className=" rounded-full"
         />
       </div>
@@ -18,7 +18,7 @@ const index = () => {
         <div className=" w-4/5 h-3/5 bg-white rounded-3xl p-4 drop-shadow-2xl flex items-center justify-center">
           <Link
             href="/payment"
-            className=" w-3/4 bg-green-700 flex items-center justify-center py-5 text-white "
+            className=" w-3/4 bg-green-700 flex items-center justify-center py-5 text-white rounded-lg"
           >
             <div>PAY</div>
           </Link>
