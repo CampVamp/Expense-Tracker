@@ -3,26 +3,36 @@ import Image from "next/image";
 
 const index = () => {
   return (
-    <div className=" w-screen h-screen flex flex-col">
-      <div className="flex py-3 px-2 justify-end">
-        <Image
-          src="/cat.jpg"
-          alt="Cat"
-          width="40"
-          height="60"
-          className=" rounded-full"
-        />
-      </div>
-      <div className=" h-full flex flex-col justify-center items-center gap-11">
-        <div className=" text-4xl font-semibold">FINANCE TRACKER</div>
-        <div className=" w-4/5 h-3/5 bg-white rounded-3xl p-4 drop-shadow-2xl flex items-center justify-center">
+    <div className="w-screen h-screen flex flex-col">
+      <div className="flex flex-col items-center justify-center">
+        <div>
+          <Image src="/homepic.svg" alt="Homepic" width="350" height="350" />
+        </div>
+        <div className="flex flex-col bg-greenyellow w-4/5 py-16 rounded-md items-center justify-center gap-4">
+          <div className=" text-6xl">Hi Ajay</div>
+          <div className=" text-2xl text-center">
+            Track your sending <br /> to Cut
+          </div>
           <Link
             href="/payment"
-            className=" w-3/4 bg-green-700 flex items-center justify-center py-5 text-white rounded-lg"
+            className=" w-3/4 bg-violetpurple text-greenyellow flex items-center justify-center py-3 text-4xl rounded-lg"
           >
             <div>PAY</div>
           </Link>
         </div>
+      </div>
+      <div className="flex items-end justify-center h-full w-screen sticky bottom-0">
+        <div></div>
+        <div>
+          <Image
+            src="/cat.jpg"
+            alt="Cat"
+            width="80"
+            height="120"
+            className=" rounded-full"
+          />
+        </div>
+        <div></div>
       </div>
     </div>
   );
