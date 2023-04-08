@@ -1,5 +1,4 @@
 import { Field, Form, Formik } from "formik";
-import { useState } from "react";
 
 const FieldClass =
   "border-b-2 border-white bg-transparent text-white placeholder-gray-500 md:text-right font-normal focus:outline-none xl:w-96 p-3 font-subHeading focus:border-green-500 focus:bg-black-100 bg-gray-900 bg-opacity-10 w-full";
@@ -23,7 +22,6 @@ const payment = () => {
     console.log("Hello Ajay, the form was submitted!");
     console.log(values);
   };
-  const [othername, setothername] = useState(false);
   return (
     <div className="flex items-center justify-center w-screen h-screen">
       <div>
@@ -42,14 +40,6 @@ const payment = () => {
               <option value="Snacks">Snacks</option>
               <option value="other">Other</option>
             </Field>
-            {othername && (
-              <Field
-                className={FieldClass}
-                placeholder="To whom did you pay?"
-                name="paidother"
-                type="text"
-              ></Field>
-            )}
             <Field
               className={FieldClass}
               placeholder="How much did you pay?"
