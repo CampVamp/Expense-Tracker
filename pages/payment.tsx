@@ -14,7 +14,7 @@ type formData = {
 const payment = () => {
   let initialValues: formData = {
     paidfor: "",
-    paidother: "None",
+    paidother: "",
     amt: "",
   };
 
