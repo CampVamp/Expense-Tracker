@@ -6,7 +6,13 @@ const index = () => {
     <div className="w-screen h-screen flex flex-col">
       <div className="flex flex-col items-center justify-center">
         <div>
-          <Image src="/homepic.svg" alt="Homepic" width="350" height="350" />
+          <Image
+            src="/homepic.svg"
+            alt="Homepic"
+            width="350"
+            height="350"
+            priority
+          />
         </div>
         <div className="flex flex-col bg-greenyellow w-4/5 py-16 rounded-md items-center justify-center gap-4">
           <div className=" text-6xl">Hi Ajay</div>
@@ -21,7 +27,7 @@ const index = () => {
           </Link>
         </div>
       </div>
-      <div className="flex items-end justify-center h-full w-screen sticky bottom-0">
+      <div className="flex items-end justify-center h-full w-screen">
         <div></div>
         <div>
           <Image

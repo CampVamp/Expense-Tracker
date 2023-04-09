@@ -14,7 +14,7 @@ type formData = {
 const payment = () => {
   let initialValues: formData = {
     paidfor: "",
-    paidother: "",
+    paidother: "None",
     amt: "",
   };
 
@@ -26,30 +26,42 @@ const payment = () => {
     <div className="flex items-center justify-center w-screen h-screen">
       <div>
         <Formik initialValues={initialValues} onSubmit={onSubmit}>
-          <Form className="flex flex-col justify-center gap-4 w-80">
-            <Field
-              component="select"
-              name="paidfor"
-              className={FieldClassDropDown}
-            >
-              <option value="" disabled hidden>
-                Paid for
-              </option>
-              <option value="Petrol">Petrol</option>
-              <option value="Parking">Parking</option>
-              <option value="Snacks">Snacks</option>
-              <option value="other">Other</option>
-            </Field>
-            <Field
-              className={FieldClass}
-              placeholder="How much did you pay?"
-              name="amt"
-              type="text"
-            ></Field>
-            <button className=" bg-green-600 py-3 rounded-lg" type="submit">
-              Submit
-            </button>
-          </Form>
+          {({ values }) => {
+            return (
+              <Form className="flex flex-col justify-center gap-4 w-80">
+                <Field
+                  component="select"
+                  name="paidfor"
+                  className={FieldClassDropDown}
+                >
+                  <option value="" disabled hidden>
+                    Paid for
+                  </option>
+                  <option value="Petrol">Petrol</option>
+                  <option value="Parking">Parking</option>
+                  <option value="Snacks">Snacks</option>
+                  <option value="other">Other</option>
+                </Field>
+                {values.paidfor == "other" ? (
+                  <Field
+                    className={FieldClass}
+                    placeholder="Paid for?"
+                    name="paidother"
+                    type="text"
+                  ></Field>
+                ) : null}
+                <Field
+                  className={FieldClass}
+                  placeholder="How much did you pay?"
+                  name="amt"
+                  type="text"
+                ></Field>
+                <button className=" bg-green-600 py-3 rounded-lg" type="submit">
+                  Submit
+                </button>
+              </Form>
+            );
+          }}
         </Formik>
       </div>
     </div>
